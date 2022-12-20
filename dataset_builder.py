@@ -8,7 +8,7 @@ for task in tasks:
 
     data = data.sample(frac=1, random_state=MAGIC)
 
-    eval_dataset = data.sample(3000, random_state=MAGIC)
+    eval_dataset = data.sample(10000, random_state=MAGIC)
     train_dataset = data.drop(eval_dataset.index)
 
     eval_dataset.to_csv('./data/eval_'+task+'.txt', sep='\t', header=['src_txt'], index=None)
